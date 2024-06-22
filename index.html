@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TodoAPP</title>
+  </head>
+  <body class="bg-[#212121] text-white font-indieflower flex items-center justify-center h-screen">
+    <div id="wrapper" class="max-w-[350px] w-full bg-[#212121] flex flex-col items-center text-3xl max-h-[600px] h-full rounded-3xl p-4 border-solid border-2 border-white">
+      <h1 class="mb-1 cursor-pointer">Todo-List</h1>
+      <form id="todo-input-form" class="flex justify-start items-center w-full text-xl rounded-md overflow-hidden border-solid border-2 border-white mb-2 p-2" >
+        <input id="todo-input" class="flex-1 outline-none bg-transparent p-1  placeholder:text-[#aaa9a9] text-xl " type="text"  placeholder="e.g,Milk" autocomplete="off">
+        <input class="bg-transparent rounded-md px-3  border-solid border-2  border-white  cursor-pointer hover:text-purple-400 hover:border-purple-400" type="submit" value="Add">
+      </form>
+      <ul class="flex justify-end w-full gap-2 text-lg mb-4 cursor-pointer ">
+        <li class="hover:text-red-400 active:text-red-500" id="all">All</li>
+        <li class="hover:text-red-400 active:text-red-500" id="pending">Pending</li>
+        <li class="hover:text-red-400 active:text-red-500" id="done">Done</li>
+      </ul>
+
+      <div id="todo-container" class="w-full h-full align-top overflow-y-scroll todo-container">
+        <template>
+          <div id="todo" class="flex w-full text-xl items-center justify-center border-solid border-2 border-white rounded-md px-1 mb-4" >
+            <!-- <input type="checkbox"  id="tick"> -->
+            <input  class="task-name flex-1 py-1 text-xl bg-transparent outline-none cursor-pointer" type="text" readonly>
+            <button class="edit mr-2 hover:text-purple-400" >Edit</button>
+            <button class="delete hover:text-red-400">X</i></button>
+          </div>
+        </template>
+      </div>
+      
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
